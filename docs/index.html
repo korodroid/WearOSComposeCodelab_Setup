@@ -1,0 +1,119 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Building for WearOS Apps Codelab (Setup)</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/codelab-elements-tmp/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id="codelab-wearos-markdown"
+                  title="Building for WearOS Apps Codelab (Setup)"
+                  environment="web"
+                  feedback-link="https://github.com/korodroid/WearOSComposeCodelab_Setup">
+    
+      <google-codelab-step label="Introduction" duration="0">
+        <p>This Codelab explains how to develop WearOS Apps with Jetpack Compose.</p>
+<p>&#34;Compose for Wear OS&#34; simplifies and accelerates UI development and helps you create beautiful apps with less code. Currently, it&#39;s the most recommended approach for Wear OS Apps Development.</p>
+<p>For this codelab, we expect that you have some knowledge of Compose and Kotlin, but you certainly don&#39;t need to be an expert.</p>
+<p>At this codelab, it starts from the basic sample. And you will learn how to improve Wear OS apps with Jetpack Compose little by little. Finally, you can start writing your own apps for Wear OS. Let&#39;s get started!</p>
+<h2 is-upgraded>Wear OS Apps Examples</h2>
+<p class="image-container"><img alt="Sample1" src="img/cd6ef580293f5c88.png"><img alt="Sample2" src="img/7df3237428a33062.png"></p>
+<h2 is-upgraded>What you will learn</h2>
+<ul>
+<li>How to get started Wear OS Apps Development with Jetpack Compose</li>
+<li>Similarities/differences between Mobile and WearOS experience with Jetpack Compose</li>
+<li>Basic Wear OS composables</li>
+<li>How to optimize screens for Wear OS</li>
+<li>How to get improve Wear OS UI &amp; UX with useful composables</li>
+</ul>
+<h2 is-upgraded>Prerequisites</h2>
+<ul>
+<li>Basic understanding of <a href="https://developer.android.com/" target="_blank">Android development</a></li>
+<li>Basic understanding of <a href="https://developer.android.com/kotlin" target="_blank">Kotlin</a></li>
+<li>Basic knowledge of <a href="https://developer.android.com/jetpack/compose" target="_blank">Compose</a></li>
+</ul>
+<h2 is-upgraded>What you will build</h2>
+<p>At first, you&#39;ll build a simple app that displays just a scrollable list of composables. It&#39;s just like a simple Contacts App. But there are some problems. Screens aren&#39;t opzimized for Wear OS. It includes only one screen. Also, it doesn&#39;t include any navigations.</p>
+<p>Here are some steps for improving UI &amp; UX.</p>
+<p>By modifing the code little by little, finally you&#39;ll find how we develop the Wear OS screens.</p>
+<p>Because you will be using Scaffold, you&#39;ll also get a curved text time at the top, a vignette, and finally a scrolling indicator tied to the side of the device.</p>
+<p>Here&#39;s what it will look like when you are finished with the code lab:</p>
+<p class="image-container"><img alt="Preparation" src="img/d72018f2e2ef4b95.gif"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Getting Set Up (in advance)" duration="0">
+        <h2 is-upgraded>What you will need</h2>
+<ul>
+<li>Android Studio  <ul>
+<li>Mandatory: Dolphin, Electric Eel or Flamingo</li>
+<li>Recommendation for this workshop: Electric Eel</li>
+</ul>
+</li>
+<li>Wear OS AVD images  <ul>
+<li>Recommendation for this workshop: API Level 30 (Shape: Wear OS Small Round)</li>
+</ul>
+</li>
+</ul>
+<h2 is-upgraded>How to create Wear OS AVD</h2>
+<p>Setup your Wear OS AVD images like this through <code>Device Manager</code>.</p>
+<p class="image-container"><img alt="Preparation" src="img/ff097545102537f9.png"></p>
+<p class="image-container"><img alt="Preparation" src="img/d5099be7dda3629a.gif"></p>
+<h2 is-upgraded>Download code</h2>
+<p>If you have git installed, you can simply run the command below to clone the code from <a href="https://github.com/korodroid/WearOSComposeCodelab" target="_blank">this repo</a>. To check whether git is installed, type <code>git --version</code> in the terminal or command line and verify that it executes correctly.</p>
+<pre><code>git clone https://github.com/korodroid/WearOSComposeCodelab.git
+cd WearOSComposeCodelab
+</code></pre>
+<p>If you do not have git, you can click the following button to download all the code for this codelab:</p>
+<p><a href="https://github.com/korodroid/WearOSComposeCodelab/archive/refs/heads/main.zip" target="_blank"><paper-button class="colored" raised><iron-icon icon="file-download"></iron-icon>Download ZIP</paper-button></a></p>
+<h2 is-upgraded>Run the Base App</h2>
+<h3 is-upgraded>Open project in Android Studio</h3>
+<ol type="1">
+<li>On the Welcome to Android Studio window select <img alt="folder" src="img/c01826594f360d94.png"> Open an Existing Project</li>
+<li>Select the folder <code>[Download Location]</code></li>
+<li>When Android Studio has imported the project, test that you can run the <code>start</code> and <code>finished</code> modules on a Wear OS emulator or physical device. Also, there are some modules <code>step1</code>, <code>step2</code>, <code>step3</code> and <code>step4</code> for each step.</li>
+<li>The modules should look like the screenshot below. <img alt="1stStep" src="img/dad6b80cfbafca1e.png"></li>
+<li>Choose <code>start</code> module. It&#39;s where you will be doing all your work. And just tap the <code>Run(Green Triangle)</code> button like this.</li>
+</ol>
+<p class="image-container"><img alt="1stStep" src="img/8fe0b8b61620b467.png"></p>
+<h2 is-upgraded>Result</h2>
+<aside class="special"><p>If you can see the app screen on your Emulator, you&#39;re ready to start developing Wear OS Apps.</p>
+</aside>
+<p class="image-container"><img alt="Step0" src="img/956c0a080736fef8.gif"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Next Step" duration="0">
+        <p>Look forward to your workshop day!</p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/codelab-elements-tmp/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements-tmp/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements-tmp/prettify.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements-tmp/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>

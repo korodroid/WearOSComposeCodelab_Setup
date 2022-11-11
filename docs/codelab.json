@@ -1,0 +1,25 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2022-11-11T11:42:20+09:00",
+  "id": "codelab-wearos-markdown",
+  "duration": 0,
+  "title": "Building for WearOS Apps Codelab (Setup)",
+  "summary": "Wear OS Codelab",
+  "source": "codelab.md",
+  "theme": "",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "codelab",
+    "markdown"
+  ],
+  "tags": [
+    "wearable"
+  ],
+  "feedback": "https://github.com/korodroid/WearOSComposeCodelab_Setup",
+  "url": "codelab-wearos-markdown"
+}
